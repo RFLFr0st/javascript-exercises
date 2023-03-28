@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(./assets/fundo1.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+#container{
+    width: 360px;
+    height: 712px;
+    margin: 100px auto 0px;
+    text-align: center;
+    font-size: 18px;
+    
+}
+
+#container button{
+    padding: 10px;
+    border-radius: 5%;
+
+}
+
+input {
+    border: 2px solid grey;
+    padding: 5px;
+    
+}
+
