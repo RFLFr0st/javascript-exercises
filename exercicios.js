@@ -1,36 +1,32 @@
 //exercicio 1 ------------------------------------------------------------------------------------------
 function ex1(){
 
-    i = 0
-    j = 0
-    k = 0
-    l = 0
-   console.log("Grupo A: ")
-   while(i < 4){
-       i++
-       gpa = [Math.floor(Math.random() * 10)]
-       console.log(gpa);
-      
-   }  
-   console.log("Grupo B: ")
-   while(j < 4){
-       j++
-       gpb = [Math.floor(Math.random() * 10)]
-       console.log(gpb);
-       
-   }
-   console.log("Grupo C: ")
-   while(k < 4){
-       k++
-       gpc = [Math.floor(Math.random() * 10)]
-       console.log(gpc);
-   }
-   console.log("Grupo D: ")
-   while(l < 4){
-       l++
-       gpd = [Math.floor(Math.random() * 10)]
-       console.log(gpd);
-   }
+    let a, b, c, d, aux
+    let cont = 1
+
+    while(cont <= 4){
+    a = Number(prompt('Informe A'))
+    b = Number(prompt('Informe B'))
+    c = Number(prompt('Informe C'))
+    d = Number(prompt('Informe D'))
+    let conta = 1
+    
+        while(conta <= 3){
+            if(a > b){
+                aux = a; a = b; b = aux;
+            }
+            if(b > c){
+                aux = b; b = c; c = aux;
+            }
+            if(c > d){
+                aux = c; c = d; d = aux;
+            }
+            conta++
+        }
+    alert(`Crescente: ${a}, ${b}, ${c} e ${d}`)
+    alert(`Descrescente: ${d}, ${c}, ${b}, ${a} `)
+    cont++
+    }
     
 }
 //exercicio 2 ------------------------------------------------------------------------------------------
@@ -282,10 +278,32 @@ function ex8(){
 }
 
 //exercicio 9 ------------------------------------------------------------------------------------------
+function ex9(){
+    let idades = 0, total = 0, altura = 0,  qtdepessoas = 0
+    let media = 0
+    let percent = 0
+    for(let i = 0; i <= 10; i++){
+        idades = Number(prompt(`Digite a idade ${i}: `))
+        pesos = Number(prompt(`Digite o peso ${i}: `))
+        altura = Number(prompt(`Digite a altura ${i}: `))
+        total += total
 
+        if(pesos > 90 && altura < 1.50){
+            idades += idades
+        }
+        if(idades >= 10 || idades <= 30 && altura >= 1.90){
+            qtdepessoas++
+            
+        }
+    }
+    percent = (qtdepessoas * 100) / 10
+    media = total / 10 
 
-
-
+    alert(`Média das idades: ${media}`)
+    alert(`Quantidade de pessoas maior de 60kg e menor que 1.50: ${qtdepessoas}`)
+    alert(`Porcentagem  de pessoas entre 10 e 30 kg maiores de 1.90: ${percent}`)
+    
+}
 
 //exercicio 10 ------------------------------------------------------------------------------------------
 function ex10(){
@@ -333,7 +351,74 @@ function ex20(){
             default: alert("Opção inválida")
         }
     }
-    while(opc != 3){
+    while(opc != 3);
+
+    
+}
+//exercicio 21 ------------------------------------------------------------------------------------------
+function ex21(){
+    let cand1 = 0, cand2 = 0, cand3 = 0, cand4 = 0, nulos = 0, brancos = 0
+    let total, opc
+    
+    do{
+        opc = Number(prompt(`Escolha uma opção: \n 1. Candidato 1 \n 2. Candidato 2 \n 3. Candidato 3 \n 4. Candidato 4 \n 5. Nulo \n 6. Branco \n 0. Sair do programa`))
+        switch(opc){
+            case 1: cand1++; break
+            case 2: cand2++; break   
+            case 3: cand3++; break
+            case 4: cand4++; break
+            case 5: nulos++; break
+            case 0: alert('Votação encerrada'); break
+            dafault: alert('Opção inválida')
+        }
 
     }
+    while(opc != 0);
+        total = cand1 + cand2 + cand3 + cand4 + nulos + brancos
+        if(total > 0){
+        alert(`Porcentagem de votos nulos: ${(nulos/total) * 100}`)
+        alert(`Porcentagem de votos brancos: ${(brancos/total)  * 100}`)
+    }   
+        else alert('Nenhum voto computado')
+}
+
+//exercicio 23 ------------------------------------------------------------------------------------------
+
+function ex23(){
+    let salario, novo, ferias, dcterceiro, meses, opcao
+
+    do{
+        opcao = Number(prompt(`Escolha uma opção: \n 1. Novo salário \n 2. Férias \n 3. Décimo terceiro \n 4. Sair`))
+            switch(opcao){
+                case 1: salario = Number(prompt(`Informe o salário `))
+                            if(salario >= 0 && salario < 210){
+                                novo = salario + salario * 15 / 100
+                            }
+                            else if(salario >= 210 && salario <= 600){
+                                novo = salario + salario * 10 / 100
+                            }
+                            else if(salario > 600){
+                                novo = salario + salario * 5 / 100
+                            }
+                            else{
+                                alert('Salario negativo'); break
+                            }
+                            alert(`Novo salário ${novo}`); break
+                case 2: salario = Number(prompt(`Informe o salário `))
+                              ferias = salario + 1 / 3 * salario
+                        alert(`Férias ${ferias}`); break        
+                case 3: salario = Number(prompt(`Informe o salário: `))
+                        meses = Number(prompt(`Informe meses: `))
+                            if(meses >=1 &&  meses <= 12){
+                                dcterceiro = salario + salario * meses / 12
+                                alert(`Décimo terceiro: ${dcterceiro}`)
+                            }
+                            else{
+                                alert(`Numero de meses inválido`)
+                            }   
+                            break
+                case 4: alert(`Encerra o programa`); break
+                default: alert(`Opção invalida`)
+            }
+    }while(opcao != 4)
 }

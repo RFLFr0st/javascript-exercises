@@ -164,3 +164,6 @@ function ex6(){
     alert(`Total a prazo: ${totalPrazo}, Total a vista: ${totalVista} e Total: ${total}`)
     alert(`Valor da 1° prestação ${(totalPrazo / 3).toFixed(2)}`)
 }
+//-------------------------------------------------------------------------
+
+// Do while é bom p validar entrada de usuario
