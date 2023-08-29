@@ -1,0 +1,18 @@
+Esse código em JavaScript é um programa que simula o funcionamento de um sistema de gerenciamento de farmácias e remédios, incluindo o cadastro de farmácias, remédios e a realização de vendas. Vou explicar o código passo a passo:
+
+Comentários Iniciais:
+O código começa com alguns comentários explicativos sobre o que ele faz, como a estrutura de vetores (arrays) que será utilizada para armazenar os dados das farmácias e dos remédios.
+
+Função farma():
+Essa é a função principal que inicia a execução do programa. Ela chama outras funções para entrada de dados das farmácias, entrada de dados dos remédios e efetua vendas.
+
+Função entradaDadosFarmas(vetFarmacias):
+Essa função é responsável por solicitar os dados das farmácias ao usuário. Ela utiliza um loop para iterar três vezes (representando três farmácias) e, em cada iteração, solicita ao usuário o código, nome e endereço da farmácia. O código verifica se o código da nova farmácia já existe no vetor de farmácias usando a função some. Se o código já existir, o usuário é solicitado a fornecer um novo código. Caso contrário, a nova farmácia é adicionada ao vetor de farmácias.
+
+Função entradaDadosRemedios(vetRemedios, vetFarmacias):
+Essa função é responsável por solicitar os dados dos remédios ao usuário. Ela utiliza um loop para iterar cinco vezes (representando cinco remédios) e, em cada iteração, solicita ao usuário o código da farmácia, nome do remédio, quantidade em estoque e preço. Antes de adicionar um novo remédio ao vetor de remédios, verifica se a farmácia com o código fornecido pelo usuário existe no vetor de farmácias usando a função some. Se não existir, o usuário é solicitado a fornecer um novo código de farmácia.
+
+Função vendas(vetRemedios):
+Essa função simula o processo de vendas. Ela utiliza um loop para realizar cinco vendas (representando o número de vendas desejadas). Em cada iteração, solicita ao usuário o código da farmácia, o nome do remédio desejado e a quantidade desejada. O programa verifica se a combinação de código de farmácia e nome do remédio corresponde a um remédio existente no vetor de remédios. Se sim, verifica se há estoque suficiente para a venda e, se houver, atualiza o estoque subtraindo a quantidade vendida. Caso contrário, exibe uma mensagem informando que o produto não foi encontrado.
+
+A estrutura geral do código envolve a criação de funções que realizam etapas específicas do processo, como entrada de dados e vendas, para melhor organizar o código e torná-lo mais legível e modular. Além disso, o código faz uso das funções some e toUpperCase para validar informações e garantir a consistência dos dados inseridos pelo usuário.
